@@ -12,26 +12,7 @@
   </head>
  
   <body>
-     <script>
-    const realFileBtn = document.getElementById("real-file");
-const customBtn = document.getElementById("custom-button");
-const customTxt = document.getElementById("custom-text");
-
-customBtn.addEventListener("click", function() {
-  realFileBtn.click();
-});
-
-realFileBtn.addEventListener("change", function() {
-  if (realFileBtn.value) {
-    customTxt.innerHTML = realFileBtn.value.match(
-      /[\/\\]([\w\d\s\.\-\(\)]+)$/
-    )[1];
-  } else {
-    customTxt.innerHTML = "No file chosen, yet.";
-  }
-});
-
-  </script>
+     
 
     <div class="container mt-5">
       <h1><mark>Meme Templates</mark></h1>
@@ -58,8 +39,27 @@ realFileBtn.addEventListener("change", function() {
             <textarea class="form-control" id="comments" name="message" rows="3" required></textarea>
           </div>
           <input type="file" id="real-file" hidden="hidden" />
-<button type="button" id="customBtn">Choose An Example:</button>
-<span id="customTxt">No file chosen, yet.</span>
+<button type="button" id="custom-button">Choose An Example:</button>
+<span id="custom-text">No file chosen, yet.</span><script>
+    const realFileBtn = document.getElementById("real-file");
+const customBtn = document.getElementById("custom-button");
+const customTxt = document.getElementById("custom-text");
+
+customBtn.addEventListener("click", function() {
+  realFileBtn.click();
+});
+
+realFileBtn.addEventListener("change", function() {
+  if (realFileBtn.value) {
+    customTxt.innerHTML = realFileBtn.value.match(
+      /[\/\\]([\w\d\s\.\-\(\)]+)$/
+    )[1];
+  } else {
+    customTxt.innerHTML = "No file chosen, yet.";
+  }
+});
+
+  </script>
           <div class="col-md-12">
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
